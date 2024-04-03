@@ -1,0 +1,20 @@
+[build-system]
+requires = ["setuptools"]
+
+[project]
+name = "pyssdp-server"
+authors = [
+    {name = "Luc", email = "lucifiel1618@gmail.com"},
+]
+description = "Standalone Python Asycio-based SSDP Server"
+readme = "README.md"
+requires-python = ">=3.11"
+version = "1.0.0"
+
+dependencies = [
+    "ifaddr",
+    "ssdp"
+]
+
+[project.scripts]
+pyssdp-server = "pyssdp_server.main:main"

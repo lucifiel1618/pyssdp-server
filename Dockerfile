@@ -1,0 +1,10 @@
+FROM python:3.11-alpine
+ENV PROJECT_NAME=pyssdp-server
+ENV WORKDIR=/${PROJECT_NAME}
+WORKDIR ${WORKDIR}
+ADD . ${WORKDIR}/${PROJECT_NAME}
+
+RUN eval "pip install ${WORKDIR}/${PROJECT_NAME}${PIP_INSTALL_CMD_SUFFIX}" \
+    && rm -r ${WORKDIR}/${PROJECT_NAME}
+
+ENTRYPOINT ["pyssdp-server"]
